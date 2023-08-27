@@ -1,0 +1,8 @@
+{
+	"devDependencies": {
+		"concurrently": "^8.2.1"
+	},
+	"scripts": {
+		"dev": "concurrently \"pnpm --prefix packages/library run watch\" \"pnpm --prefix packages/example dev\""
+	}
+}
