@@ -1,1 +1,0 @@
-export { KnowledgeGraphExplorer } from './KnowledgeGraphExplorer';
