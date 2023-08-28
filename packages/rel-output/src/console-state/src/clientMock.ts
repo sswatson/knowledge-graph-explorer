@@ -1,0 +1,65 @@
+import { Client } from '@relationalai/rai-sdk-javascript/web';
+
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+type ClientMock = Pick<Client, keyof Client>;
+
+export function createClientMock(mockValues: Partial<ClientMock> = {}) {
+  const mock: ClientMock = {
+    baseUrl: '',
+    config: {} as any,
+    region: '',
+    cancelTransaction: jest.fn(),
+    createDatabase: jest.fn(),
+    createEngine: jest.fn(),
+    createOAuthClient: jest.fn(),
+    createUser: jest.fn(),
+    deleteDatabase: jest.fn(),
+    deleteEdb: jest.fn(),
+    deleteEngine: jest.fn(),
+    deleteModels: jest.fn(),
+    deleteModelsAsync: jest.fn(),
+    deleteOAuthClient: jest.fn(),
+    deleteUser: jest.fn(),
+    disableUser: jest.fn(),
+    enableUser: jest.fn(),
+    exec: jest.fn(),
+    execAsync: jest.fn(),
+    getDatabase: jest.fn(),
+    getEngine: jest.fn(),
+    getModel: jest.fn(),
+    getOAuthClient: jest.fn(),
+    getTransaction: jest.fn(),
+    getTransactionMetadata: jest.fn(),
+    getTransactionProblems: jest.fn(),
+    getTransactionResults: jest.fn(),
+    getTransactionQuery: jest.fn(),
+    getUser: jest.fn(),
+    installModels: jest.fn(),
+    installModelsAsync: jest.fn(),
+    listDatabases: jest.fn(),
+    listEdbs: jest.fn(),
+    listEngines: jest.fn(),
+    listModels: jest.fn(),
+    listOAuthClients: jest.fn(),
+    listPermissions: jest.fn(),
+    listTransactions: jest.fn(),
+    listUsers: jest.fn(),
+    loadCsv: jest.fn(),
+    loadJson: jest.fn(),
+    onResponse: jest.fn(),
+    pollTransaction: jest.fn(),
+    query: jest.fn(),
+    rotateOAuthClientSecret: jest.fn(),
+    runActions: jest.fn(),
+    runTransaction: jest.fn(),
+    runTransactionAsync: jest.fn(),
+    updateOAuthClient: jest.fn(),
+    updateUser: jest.fn(),
+    suspendEngine: jest.fn(),
+    resumeEngine: jest.fn(),
+    ...mockValues,
+  };
+
+  // casting it to EngineStore because of private fields
+  return mock as Client;
+}

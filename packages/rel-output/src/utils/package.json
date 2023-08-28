@@ -1,0 +1,34 @@
+{
+  "name": "@relationalai/utils",
+  "description": "",
+  "version": "0.0.0",
+  "author": "team@relational.ai",
+  "bugs": "https://github.com/RelationalAI/rai-ux/issues",
+  "dependencies": {
+    "@relationalai/rai-sdk-javascript": "0.7.0-alpha24",
+    "apache-arrow": "8.0.0",
+    "lodash-es": "4.17.21"
+  },
+  "devDependencies": {
+    "@relationalai/config": "*",
+    "@types/lodash-es": "4.17.4",
+    "@types/wicg-file-system-access": "2020.9.5",
+    "eslint": "7.28.0",
+    "typescript": "4.9.3"
+  },
+  "files": [
+    "*"
+  ],
+  "homepage": "https://github.com/RelationalAI/rai-ux#readme",
+  "main": "index.ts",
+  "private": true,
+  "repository": "RelationalAI/rai-ux.git",
+  "scripts": {
+    "fix": "eslint --cache --fix . --ext js --ext ts --ext tsx",
+    "format": "prettier --write ./src --loglevel warn",
+    "lint": "eslint --cache . --ext js --ext ts --ext tsx",
+    "test": "DD_TAGS=package:utils,${DD_TAGS:-} jest",
+    "test:debug": "npx --node-arg=--inspect jest --runInBand --testTimeout=60000 --verbose --watch",
+    "tscheck": "tsc --noEmit --pretty true"
+  }
+}

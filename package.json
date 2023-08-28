@@ -3,6 +3,6 @@
 		"concurrently": "^8.2.1"
 	},
 	"scripts": {
-		"dev": "concurrently \"pnpm --prefix packages/library run watch\" \"pnpm --prefix packages/example dev\""
+		"dev": "concurrently \"pnpm --prefix packages/knowledge-graph-explorer run watch\" \"pnpm --prefix packages/demo dev\""
 	}
 }

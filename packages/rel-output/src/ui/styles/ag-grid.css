@@ -1,0 +1,223 @@
+@import 'ag-grid-community/styles/ag-grid.css';
+@import 'ag-grid-community/styles/ag-theme-alpine.css';
+
+/* List of all parameters: https://cdn.jsdelivr.net/npm/ag-grid-community@29.0.0/styles/ag-theme-alpine.css */
+
+.ag-theme-alpine {
+  /* override theme parameters */
+  --ag-background-color: theme('colors.white');
+  --ag-foreground-color: theme('colors.gray.500');
+  --ag-icon-font-code-color-picker: theme('colors.red-orange.900');
+  --ag-input-focus-border-color: theme('colors.red-orange.700');
+  --ag-control-panel-background-color: theme('colors.white');
+  --ag-alpine-active-color: theme('colors.red-orange.900');
+  --ag-header-foreground-color: theme('colors.gray.500');
+  --ag-header-background-color: theme('colors.white');;
+  --ag-odd-row-background-color: theme('colors.white');
+  --ag-border-color: theme('colors.gray.300');
+  --ag-secondary-border-color: theme('colors.gray.200');
+  --ag-range-selection-border-color: theme('colors.red-orange.300');
+  --ag-range-selection-text-color: black;
+  --ag-selected-row-background-color: theme('colors.red-orange.200');
+  --ag-range-selection-background-color: theme('colors.red-orange.100');
+  --ag-range-selection-background-color-2: theme('colors.red-orange.900');
+  --ag-range-selection-background-color-3: theme('colors.red-orange.900');
+  --ag-range-selection-background-color-4: theme('colors.red-orange.900');
+  --ag-row-hover-color: theme('colors.red-orange.50');
+  /* --ag-tooltip-background-color: black; */
+  --ag-list-item-height: calc(var(--ag-grid-size) * 5);
+  --ag-line-height: 40px;
+  --ag-row-height: 40px;
+  --ag-header-height: 40px;
+  --ag-border-color: theme('colors.white');
+}
+
+.ag-theme-alpine .ag-filter-toolpanel-group-level-0-header {
+  height: calc(var(--ag-grid-size) * 7);
+}
+
+/* Necessary for preserve white space in cell values */
+.ag-theme-alpine .ag-cell {
+  white-space: pre !important;
+}
+
+/* Necessary due to the issue with icons/text height when using enableCellTextSelection ag-grid flag */
+.ag-theme-alpine .ag-cell-wrapper, .ag-theme-alpine .ag-cell-wrapper > span {
+  height: 100%;
+}
+
+/* Necessary to style the sort column header icons */
+.ag-theme-alpine .ag-sort-indicator-icon {
+  color: theme('colors.red-orange.900');
+}
+
+.ag-theme-alpine .ag-set-filter-list {
+  height: calc(var(--ag-list-item-height) * 9);
+}
+
+.ag-theme-alpine .ag-popup .ag-tabs {
+  min-width: 300px;
+}
+
+/* Necessary to style the header filter inputs */
+.ag-theme-alpine .ag-filter input {
+  outline-style: none;
+  box-shadow: none;
+  font-size: 14px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.ag-theme-alpine .ag-filter input:focus {
+  outline-style: none;
+  box-shadow: none;
+}
+
+.ag-theme-alpine .ag-popup-child {
+  background-color: #fff;
+  border: 1px solid theme('colors.gray.200');
+}
+
+.ag-theme-alpine .ag-menu-body .ag-filter {
+  padding-bottom: 10px;
+}
+
+.ag-theme-alpine .ag-filter-virtual-list-item {
+  font-size: 14px;
+}
+
+.ag-theme-alpine .ag-center-cols-viewport {
+  background-color: white;
+}
+
+.ag-theme-alpine .ag-header-container {
+  border-bottom: 1px solid theme('colors.gray.200');
+}
+
+.ag-theme-alpine .ag-tooltip {
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 14px;
+  border-color: #000;
+}
+
+.ag-theme-alpine .ag-row-selected .ag-cell {
+  color: black;
+}
+
+.ag-theme-alpine .ag-input-field-input {
+  padding: 0;
+}
+
+.ag-theme-alpine .ag-body-viewport {
+  background-color: theme('colors.gray.50');
+}
+
+.ag-theme-alpine .ag-header-row {
+  height: 40px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.ag-theme-alpine .ag-row {
+  font-size: 14px;
+}
+
+.ag-theme-alpine .ag-row .btn-cell {
+  padding: 0;
+  margin: 0;
+}
+
+/* Necessary to remove the table border when nesting in the Output of the query browser */
+.nested-grid.ag-theme-alpine .ag-root-wrapper {
+  border-left: none;
+  border-right: none;
+}
+
+/* Necessary to properly set auto-height below the 150px minimum */
+.ag-theme-alpine .ag-layout-auto-height .ag-center-cols-clipper,
+.ag-theme-alpine .ag-layout-auto-height .ag-center-cols-container {
+  min-height: 30px !important;
+}
+
+.ag-theme-alpine .ag-overlay-no-rows-wrapper.ag-layout-auto-height {
+  padding-top: 30px;
+}
+
+.ag-theme-alpine .ag-cell,
+.ag-theme-alpine .ag-header-cell {
+  padding-inline: 15px;
+}
+
+.ag-theme-alpine .ag-rtl .ag-cell:not(.ag-cell-range-single-cell) {
+  border-left: 1px solid var(--ag-secondary-border-color);
+}
+
+.ag-theme-alpine .ag-header-cell-resize::after {
+  top: 0;
+  height: 100%;
+}
+
+.row-number-cell {
+  opacity: 0.8;
+  font-weight: medium;
+}
+
+/* --- BEGIN Ag-Grid Filter changes --- */
+.ag-theme-alpine .ag-filter-toolpanel-instance-filter {
+  margin: 0;
+}
+
+.ag-theme-alpine .ag-side-bar-right {
+  border-left: 1px solid theme('colors.gray.200');
+}
+
+.ag-theme-alpine .ag-filter-toolpanel {
+  margin-left: 5px;
+}
+
+.ag-theme-alpine .ag-filter-toolpanel-search .ag-input-field-input {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.ag-theme-alpine .ag-filter-toolpanel-search .ag-input-field-input:focus {
+  outline-style: none;
+  box-shadow: none;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.ag-theme-alpine .ag-filter-toolpanel-instance-filter .ag-mini-filter, .ag-theme-alpine .ag-filter-toolpanel-instance-filter .ag-simple-filter-body-wrapper {
+  margin-top: 1px;
+  padding-top: 1px;
+}
+
+.ag-theme-alpine .ag-has-filter .ag-filter-toolpanel-group-title {
+  color: var(--ag-alpine-active-color);
+}
+/* --- END Ag-Grid Filter changes --- */
+
+/* Necessary to fix the checkbox click issue where it only works if you click on the lower part of the box */
+.ag-theme-alpine .ag-checkbox-input {
+  margin-top: -10px;
+}
+
+/* Necessary to remove the scroll bars from the editor tooltips in ag-grid */
+.ag-theme-alpine .code-editor .cm-scroller {
+  overflow: hidden;
+}
+
+/* Necessary to fade the editor code in the tooltips */
+.fade {
+  mask-image: linear-gradient(180deg, #000 60%, transparent);
+  -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent);
+}
